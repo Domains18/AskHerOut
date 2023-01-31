@@ -1,0 +1,30 @@
+{
+  "name": "cit-college-api",
+  "version": "1.0.0",
+  "description": "this is a typical api structure based on the daily life and neeeds of coast institute of technology",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Domains18/cit-college-api.git"
+  },
+  "keywords": [
+    "API"
+  ],
+  "author": "domains18",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Domains18/cit-college-api/issues"
+  },
+  "homepage": "https://github.com/Domains18/cit-college-api#readme",
+  "dependencies": {
+    "colors": "^1.4.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "mongoose": "^6.9.0",
+    "path": "^0.12.7"
+  }
+}
