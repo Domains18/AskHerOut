@@ -18,4 +18,7 @@ server.use(express.json());
 server.use(express.urlencoded({ extended: true }));
 server.use(errorHandler);
 
+//routes
+server.use('/api/students', require('./routes/studentRegistration'));
+
 server.listen(PORT, () => { console.log(`server started on port ${PORT}`) });
