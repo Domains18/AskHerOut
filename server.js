@@ -8,7 +8,7 @@ const path = require("path")
 const PORT = process.env.PORT;
 
 //app
-const server = express()
+const server = express();
 
 
 // middlewares and functions
