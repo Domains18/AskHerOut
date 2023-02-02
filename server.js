@@ -21,4 +21,4 @@ server.use(errorHandler);
 //routes
 server.use('/api/students', require('./routes/studentRegistration'));
 
-server.listen(PORT, () => { console.log(`server started on port ${PORT}`) });
+server.listen(PORT, () => { console.log(`server started on port ${PORT}`.yellow.underline)});
