@@ -12,5 +12,6 @@ const server = express()
 
 // middlewares and functions
 server.use(cors());
+server.use(express.json());
 
 server.listen(PORT, () => { console.log(`server started on port ${PORT}`) });
