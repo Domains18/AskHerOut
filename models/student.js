@@ -43,4 +43,7 @@ const studentSchema = mongoose.Schema({
             required: [true, 'Please define the relationship with the guardian']
         }
     }
-});
+}, {timestamps: true});
+
+
+module.exports = mongoose.model('Student', studentSchema)
