@@ -3,13 +3,13 @@ const mongoose = require('mongoose');
 const studentSchema = mongoose.Schema({
     firstName: {
         type: String,
-        required: true,
-        default: "John Doe"
+        required: [true, 'Please enter your last name'],
+        default: "John"
     },
     lastName: {
         type: String,
-        required: true,
-        default: "doe"
+        required: [true, 'Please enter your last name'],
+        default: "Doe"
     },
     nationalId: {
         type: Number,
@@ -17,13 +17,13 @@ const studentSchema = mongoose.Schema({
     },
     email: {
         type: String,
-        required: true,
+        required: [true, 'Please enter your email'],
         unique: true,
         default: "you@gmail.com"
     },
     phoneNumber: {
         type: Number,
-        required: true,
+        required: [true, 'Please enter your phone number'],
         unique: true,
         default: +25472200000
     },
@@ -36,11 +36,11 @@ const studentSchema = mongoose.Schema({
         },
         phoneNumber: {
             type: Number,
-            required: true
+            required: [true, 'Please Enter the guardians number']
         },
         relationship: {
             type: String,
-            required: true
+            required: [true, 'Please define the relationship with the guardian']
         }
     }
 });
