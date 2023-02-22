@@ -1,49 +1,51 @@
+//register student to the school database
+
+
+// Path: models/student.js
 const mongoose = require('mongoose');
 
-const studentSchema = mongoose.Schema({
-    firstName: {
+
+const studentSchema = new mongoose.Schema({
+    names: {
         type: String,
-        required: [true, 'Please enter your last name'],
-        default: "John"
-    },
-    lastName: {
-        type: String,
-        required: [true, 'Please enter your last name'],
-        default: "Doe"
-    },
-    nationalId: {
-        type: Number,
         required: true,
+        default: 'John Doe'
     },
     email: {
         type: String,
-        required: [true, 'Please enter your email'],
-        unique: true,
-        default: "you@gmail.com"
+        required: true,
+        unique: true
     },
-    phoneNumber: {
-        type: Number,
-        required: [true, 'Please enter your phone number'],
-        unique: true,
-        default: +25472200000
-    },
-    guardian: {
+    course: {
         type: String,
         required: true,
-        default: "John Doe",
-        email: {
-            type: String,
-        },
-        phoneNumber: {
-            type: Number,
-            required: [true, 'Please Enter the guardians number']
-        },
-        relationship: {
-            type: String,
-            required: [true, 'Please define the relationship with the guardian']
-        }
-    }
-}, {timestamps: true});
-
-
-module.exports = mongoose.model('Student', studentSchema)
+        default: 'Computer Science'
+    },
+    // no need for password
+    phone: {
+        type: String,
+        required: true,
+        default: '08012345678'
+    },
+    address: {
+        type: String,
+        required: true,
+        default: 'No 1, Main Street, Nairobi'
+    },
+    parent:{
+        type: String,
+        required: true,
+        default: 'John Doe'
+    },
+    parentPhone: {
+        type: String,
+        required: true,
+        default: '08012345678'
+    },
+    parentEmail: {
+        type: String,
+        required: true,
+        default: ''
+    },
+ 
+});
