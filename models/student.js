@@ -47,5 +47,10 @@ const studentSchema = new mongoose.Schema({
         required: true,
         default: ''
     },
+    kuccps: {
+        type: Boolean,
+        required: true,
+        default: false
+    }
  
 });

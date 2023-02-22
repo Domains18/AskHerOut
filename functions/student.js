@@ -1,34 +1,31 @@
 const expressAsyncHandler = require('express-async-handler');
 const express = require('express');
 const Student = require('../models/studentModel');
+c
 
-
-constRegisterStudents = expressAsyncHandler(async (req, res) => {
-    const { name, email, password, phone, address, city, state, country, zip } = req.body;
-    if (!name || !email || !password || !phone || !address || !city || !state || !country || !zip) {
+const registerStudent = expressAsyncHandler(async (req, res) => {
+    const { names, email, course, phone, address, parent, parentPhone, parentEmail, kuccps } = req.body;
+    
+    if (!names || !email || !course || !phone || !address || !parent || !parentPhone || !parentEmail || !kuccps) {
         res.status(400);
-        throw new Error('Please fill all the fields');
+        throw new Error('Please fill all fields');
     }
-    const student = await Student.create({
-        name, email, password, phone, address, city, state, country, zip
-    });
-    if (student) {
-        res.status(201).json({
-            _id: student._id,
-            name: student.name,
-            email: student.email,
-            phone: student.phone,
-            address: student.address,
-            city: student.city,
-            state: student.state,
-            country: student.country,
-            zip: student.zip,
-            token: generateToken(student._id),
-        });
-    } else {
+    const validateEmail = (email) => {
+        const re = /\S+@\S+\.\S+/;
+        return re.test(email);
+    }
+    if (!validateEmail(email)) {
         res.status(400);
-        throw new Error('Invalid user data');
+        throw new Error('Please enter a valid email');
     }
+    if (phone.length < 10) {
+        res.status(400);
+        throw new Error('Please enter a valid phone number');
+    }
+    if (parentPhone.length < 10) {
+        res.status(400);
+        throw new Error('Please enter a valid phone number');
+    }
+    
 });
-
 
