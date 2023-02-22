@@ -42,3 +42,4 @@ const getKuccps = async (req, res) => {
     }
 }
 
+module.exports = { getKuccps}
