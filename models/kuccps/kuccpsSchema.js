@@ -3,7 +3,7 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
-const studentSchema = new Schema({
+const kuccpsSchema = new Schema({
     names: {
         type: String,
         required: true,
@@ -23,6 +23,5 @@ const studentSchema = new Schema({
     }
 });
 
-
-const Student = mongoose.model("Student", studentSchema);
-module.exports = Student;
+const KUCCPS = mongoose.model("KUCCPS", kuccpsSchema);
+module.exports = KUCCPS;

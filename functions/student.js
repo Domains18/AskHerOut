@@ -1,7 +1,10 @@
 const expressAsyncHandler = require('express-async-handler');
 const express = require('express');
 const Student = require('../models/studentModel');
-c
+// const kuccpsValidator = require('../data/kuccps');
+
+
+
 
 const registerStudent = expressAsyncHandler(async (req, res) => {
     const { names, email, course, phone, address, parent, parentPhone, parentEmail, kuccps } = req.body;
@@ -26,6 +29,7 @@ const registerStudent = expressAsyncHandler(async (req, res) => {
         res.status(400);
         throw new Error('Please enter a valid phone number');
     }
-    
+    //validate kuccps
+
 });
 

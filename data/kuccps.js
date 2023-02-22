@@ -3,7 +3,7 @@ const fs = require('fs');
 const mongoose = require('mongoose');
 const Kuccps = require('../models/kuccps/kuccpsSchema');
 
-const getKuccps = async (req, res) => {
+const kuccpsValidator = async (req, res) => {
     try {
         axios.get('https://kuccps.net/api/v1/programmes')
             .then(response => {
@@ -42,4 +42,4 @@ const getKuccps = async (req, res) => {
     }
 }
 
-module.exports = { getKuccps}
+module.exports = { kuccpsValidator}
