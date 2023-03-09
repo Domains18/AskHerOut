@@ -69,3 +69,10 @@ const generateToken = () => {
         expiresIn: '500d',
     });
 }
+
+
+module.exports = {
+    loginStudent,
+    registerStudent,
+    aboutStudent,
+}
