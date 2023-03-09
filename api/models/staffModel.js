@@ -7,6 +7,10 @@ const staffSchema = new Schema({
         type: Object,
         required: [true, 'Please enter your staff Identification']
     },
+    email: {
+        type: String,
+        required: [true, 'Please enter your email']
+    },
     password: {
         type: String,
         required: [true, 'Please enter your password']
