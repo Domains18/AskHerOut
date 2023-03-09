@@ -20,7 +20,7 @@ const registerStudent = asyncHandler(async (req, res) => {
         res.status(400);
         throw new Error('Please login, details already exists');
     }
-    
+
     const salt = await bcrypt.genSalt(8);
     const hashedPassword = await bcrypt.hash(password, salt);
 
@@ -42,3 +42,30 @@ const registerStudent = asyncHandler(async (req, res) => {
         throw new Error('Invalid user data');
     }
 });
+
+const loginStudent = asyncHandler(async (req, res) => {
+    const { email, password } = req.body;
+    const student = await Student.findOne({ email });
+    if (student && (await bcrypt.compare(password, student.password))) {
+        res.json({
+            _id: student.id,
+            email: student.email,
+            admissionNumber: student.admissionNumber
+        });
+    } else {
+        res.status(400);
+        throw new Error('Invalid credentials, Acces denied');
+    }
+
+});
+
+const aboutStudent = async (req, res) => {
+    res.status(200);
+    res.json(req.user);
+}
+
+const generateToken = () => {
+    return jwt.sign({ id }, process.env.JWT_SECRET, {
+        expiresIn: '500d',
+    });
+}
