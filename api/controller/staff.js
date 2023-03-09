@@ -37,6 +37,24 @@ const registerStaff = expressAsyncHandler(async (req, res) => {
     }
 });
 
+//login
+const staffLogin = expressAsyncHandler(async (req, res) => {
+    const { identification, password } = req.body;
+    const staff = await Staff.findOne({ identification });
+    if (staff && (await bcrypt.compare(password, staff.password))) {
+        res.status(200);
+        res.json({
+            _id: staff.id,
+            identification: staff.identification,
+            email: staff.email,
+        });
+    } else {
+        res.status(400);
+        throw new Error('Not found');
+    }
+});
+
+
 //acces private
 const aboutStaff = expressAsyncHandler( async(req, res) => {
     res.status(200);
@@ -53,4 +71,5 @@ const generateToken = (id) => {
 module.exports = {
     registerStaff,
     aboutStaff,
+    staffLogin
 }
