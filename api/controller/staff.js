@@ -29,7 +29,7 @@ const registerStaff = expressAsyncHandler(async (req, res) => {
             _id: staff.id,
             identification: staff.identification,
             email: staff.email,
-            token: generateToken(staff._id);
+            token: generateToken(staff._id)
         });
     } else {
         res.status(400);
@@ -52,5 +52,5 @@ const generateToken = (id) => {
 
 module.exports = {
     registerStaff,
-    aboutStaff
+    aboutStaff,
 }
