@@ -1,0 +1,10 @@
+{
+  "name": "postgress-express-react-node",
+  "version": "1.0.0",
+  "description": "using express, react and node with postgress sql",
+  "main": "app.js",
+  "repository": "https://github.com/Domains18/postgress-express-react-node.git",
+  "author": "Domains18 <gibsonsgibson88@gmail.com>",
+  "license": "MIT",
+  "private": false
+}
