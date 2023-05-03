@@ -6,6 +6,25 @@
   "repository": "https://github.com/Domains18/postgress-express-react-node.git",
   "author": "Domains18 <gibsonsgibson88@gmail.com>",
   "license": "MIT",
+
+  "scripts": {
+    "start": "node app.js",
+    "server": "nodemon app.js",
+    "client": "npm start --prefix client",
+    "dev": "concurrently --kill-others-on-fail \"npm run server\" \"npm run client\""
+  },
+  "engines": {
+    "node": "12.18.3",
+    "npm": "6.14.6"
+  },
+  "keywords": [
+    "express",
+    "react",
+    "node",
+    "postgress"
+  ],
+  
+
   "private": false,
   "dependencies": {
     "cors": "^2.8.5",
