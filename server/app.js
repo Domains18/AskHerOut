@@ -11,6 +11,7 @@ app.use(express.json());
 
 //create todo
 app.post('/todos', async (req, res) => {
+    
     try {
         const { description } = req.body;
         const newTodo = await pool.query(
