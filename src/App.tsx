@@ -1,6 +1,11 @@
 import Typewriter from "typewriter-effect";
 import { useEffect, useState } from "react";
-import { image1, image2, image3, image4, audio } from "./assets";
+import image1 from "./assets/image.jpeg";
+import image2 from "./assets/image2.jpg";
+import image3 from "./assets/image3.jpg";
+import image4 from "./assets/image4.jpg";
+import audio from "./assets/audio.mp3";
+
 import "./index.css"; 
 
 const images = [ image1, image2, image3, image4];
