@@ -43,10 +43,10 @@ const App = () => {
         <Typewriter
           onInit={(typewriter) => {
             typewriter
-              .typeString("Hello, Khaleesi")
+              .typeString("Hello, Khaleesi 😊")
               .pauseFor(1000)
               .deleteAll()
-              .typeString("This is my valentines message for you")
+              .typeString("This is my valentines message to you")
               .pauseFor(1000)
               .deleteAll()
               .typeString(
@@ -54,24 +54,24 @@ const App = () => {
               )
               .pauseFor(1000)
               .deleteAll()
-              .typeString("Hope your smiling.......😁 ")
+              .typeString("Hope you are smiling.......😁 ")
               .pauseFor(1000)
               .deleteAll()
               .typeString(
-                "I think about you, I dream about you, and everyday I wanna wrap my arms around your waist"
+                "I think about you, I dream about you, and everyday I wanna wrap my arms around your waist "
               )
               .pauseFor(1000)
               .deleteAll()
-              .typeString("I love you, Khaleesi, I want you....... so in these delights my love ..... ")
+              .typeString(" Khaleesi, I want you....... so in these delights my love ..... ❤️")
               .pauseFor(1000)
               .deleteAll()
               .typeString("Will you be my <span style='color: red;'>Valentine</span>")
               .pauseFor(1000)
               .deleteAll()
-              .typeString("Please say <span style='color: #27ae60;'>Yes</span>")
+              .typeString("Please say <span style='color: #27ae60;'>Yes🥺🥺</span>")
               .pauseFor(1000)
               .deleteAll()
-              .typeString("Do not keep a loving heart waiting, you have my <span style='color: #27ae60;'>Number</span> already")
+              .typeString("Do not keep a loving heart waiting, you have my <span style='color: #27ae60;'>Number</span> already ❤️")
               .start();
             
           }}
