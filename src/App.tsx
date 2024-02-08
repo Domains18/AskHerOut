@@ -4,7 +4,7 @@ import image1 from "./assets/image.jpeg";
 import image2 from "./assets/image2.jpg";
 import image3 from "./assets/image3.jpg";
 import image4 from "./assets/image4.jpg";
-import audio from "./assets/audio.mp3";
+import { audio } from "./assets";
 
 import "./index.css"; 
 
@@ -14,14 +14,12 @@ const App = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   useEffect(() => {
-    playAudio();
-
-  }, []);
-  function playAudio() {
     const audioEl = new Audio(audio);
-    audioEl.loop = true; 
+    audioEl.autoplay = true;
     audioEl.play();
-  }
+    
+  }, []);
+  
 
   useEffect(() => {
     const interval = setInterval(() => {
