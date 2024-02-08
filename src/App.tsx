@@ -1,9 +1,9 @@
 import Typewriter from "typewriter-effect";
 import { useEffect, useState } from "react";
-import { image1, image0, image2, image3, image4, image5, audio } from "./assets";
+import { image1, image2, image3, image4, audio } from "./assets";
 import "./index.css"; 
 
-const images = [image0, image1, image2, image3, image4, image5];
+const images = [ image1, image2, image3, image4];
 
 const App = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
@@ -16,13 +16,12 @@ const App = () => {
     const audioEl = new Audio(audio);
     audioEl.loop = true; 
     audioEl.play();
-    audioEl.volume = 0.1;
   }
 
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
-    }, 5000);
+    }, 10000);
     return () => {
       clearInterval(interval);
     };
@@ -51,7 +50,7 @@ const App = () => {
               .pauseFor(1000)
               .deleteAll()
               .typeString(
-                "This coming special day, I want to ask you a very special question, not just for valentines, but for more valentines to come, and for everyday after every valentines"
+                "Valentines is coming, dear one. Theo of Greek said something about Roses being red, well I scourged the red of the redest rose and it still pales in comparison to your beauty"
               )
               .pauseFor(1000)
               .deleteAll()
@@ -66,8 +65,15 @@ const App = () => {
               .typeString("I love you, Khaleesi, I want you....... so in these delights my love ..... ")
               .pauseFor(1000)
               .deleteAll()
-              .typeString("Will you be my valentine?")
+              .typeString("Will you be my <span style='color: red;'>Valentine</span>")
+              .pauseFor(1000)
+              .deleteAll()
+              .typeString("Please say <span style='color: #27ae60;'>Yes</span>")
+              .pauseFor(1000)
+              .deleteAll()
+              .typeString("Do not keep a loving heart waiting, you have my <span style='color: #27ae60;'>Number</span> already")
               .start();
+            
           }}
         />
       </div>
