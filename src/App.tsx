@@ -73,7 +73,6 @@ const App = () => {
               .deleteAll()
               .typeString("Do not keep a loving heart waiting, you have my <span style='color: #27ae60;'>Number</span> already ❤️")
               .start();
-            
           }}
         />
       </div>
